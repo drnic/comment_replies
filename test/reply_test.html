@@ -124,10 +124,18 @@
     // Author with no URL
     testAuthorWithNoURL: function() { with(this) {
       var comment_link  = $$('li.comment a.reply').first();
-      var author        = "Mislav";
       var form          = $('comment');
       Event.simulate(comment_link, 'click');
       var expected = '@Mislav - ';
+      assertEqual(expected, form.value, 'textarea.comment should be initially empty');
+    }},
+
+    // Author with URL
+    testAuthorWithURL: function() { with(this) {
+      var comment_link  = $$('li.comment a.reply')[1];
+      var form          = $('comment');
+      Event.simulate(comment_link, 'click');
+      var expected = '@Chris - ';
       assertEqual(expected, form.value, 'textarea.comment should be initially empty');
     }},
 
