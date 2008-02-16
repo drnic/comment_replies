@@ -7,5 +7,7 @@ DrNic.CommentReplies.replyToComment = function() {
   } else {
     var author = cite.innerHTML;
   }
-  document.getElementById('comment').value = '@' + author + ' - ';
+  var form = document.getElementById('comment');
+  form.focus();
+  form.value = '@' + author + ' - ';
 };

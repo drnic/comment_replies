@@ -11,7 +11,7 @@ DrNic.CommentReplies.markupComment = function(comment) {
   var link = document.createElement("a");
   link.className = "reply";
   link.innerHTML = "reply";
-  link.href      = "#comment";
+  link.href      = "#commentform";
   link.onclick   = DrNic.CommentReplies.replyToComment;
   comment.appendChild(link);
 };
