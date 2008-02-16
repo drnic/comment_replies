@@ -1,5 +1,7 @@
 h1. comment_replies
 
+NOTE: the 'reply' links were added dynamically!
+
 h2. What
 
 This JavaScript project makes it quick and easy to reply
