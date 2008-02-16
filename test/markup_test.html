@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>JavaScript unit test file</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script src="assets/prototype.js" type="text/javascript"></script>
+  <script src="assets/unittest.js" type="text/javascript"></script>
+  
+  <script src="../src/markup.js" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="assets/unittest.css" type="text/css" />
+</head>
+<body>
+
+<div id="content">
+
+  <div id="header">
+    <h1>JavaScript unit test file</h1>
+    <p>
+      This file tests <strong>markup.js</strong>.
+    </p>
+  </div>
+
+  <!-- Log output (one per Runner, via {testLog: "testlog"} option)-->
+  <div id="testlog"></div>
+  
+  <!-- Put sample/test html here -->
+  <div id="sample">
+      <h5><a name="comments">Comments</a></h5> 
+
+          <div id="comments_div">
+          <ol id="comments" class="article-comments">
+
+
+            <li class="comment" id="comment-34220">
+              <div class="author">
+                <cite>Mislav</cite>
+                <abbr title="2007-06-25T14:03:09">Mon, 25 Jun 2007 17:31:26 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34220">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>This
+    is totally awesome! I’ve been using restful_authentication for quite a
+    long time and *hated* that I have to install the generator in every
+    single project. I kept thinking one should come up with a better way, a
+    gem-powered way … and here you are to respond to my pleas <img src="blog_with_comments_files/icon_smile.gif" alt=":)" class="wp-smiley">  Thank you!
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34235">
+              <div class="author">
+                <cite><a href="http://errtheblog.com/" rel="external nofollow">Chris</a></cite>
+                <abbr title="2007-06-25T14:03:09">Mon, 25 Jun 2007 20:14:55 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34235">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>This is absolutely delicious.
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34285">
+              <div class="author">
+                <cite><a href="http://nubyonrails.com/" rel="external nofollow">topfunky</a></cite>
+                <abbr title="2007-06-25T14:03:09">Tue, 26 Jun 2007 06:25:01 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34285">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>I tried to hack Hoe to accomodate this, but patching Rails will make things much easier.
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34351">
+              <div class="author">
+                <cite><a href="http://robertrevans.com/" rel="external nofollow">Robert</a></cite>
+                <abbr title="2007-06-25T14:03:09">Tue, 26 Jun 2007 16:51:21 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34351">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>This
+    is something that has been bothering me lately and I personally think
+    this is a good way to go. As far as I see it, plugins are to extend
+    Rails Core, not provide an application module like authentication -
+    where the plugin then becomes useless because it has created a file in
+    your lib/ folder. </p>
+    <p>I’m also not sure if the solution is putting the GEM inside the
+    Rails application either, when we are talking about running a generator
+    that writes code to our lib/ file and is never used again. It wouldn’t
+    make sense to me to keep that GEM, that is never used again, in our
+    application/vendor/gem. </p>
+    <p>However, I believe all generators ought to move to the way of GEMS
+    instead of plugins. Plugins should be for extending Rails and anything
+    that will generate code for your application and not for Rails, should
+    be a GEM.
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34352">
+              <div class="author">
+                <cite><a href="http://drnicwilliams.com/" rel="external nofollow">Dr Nic</a></cite>
+                <abbr title="2007-06-25T14:03:09">Tue, 26 Jun 2007 17:02:52 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34352">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>@Robert
+    - I’m sorry for the confusion on gems in rails - I wasn’t inferring
+    that gems should be put in the /vendor/gems folder at all. I was
+    actually trying to publicize the concept and show that the two patches
+    work together. I probably shouldn’t have blurred the original purpose
+    of the article.
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34354">
+              <div class="author">
+                <cite><a href="http://robertrevans.com/" rel="external nofollow">Robert</a></cite>
+                <abbr title="2007-06-25T14:03:09">Tue, 26 Jun 2007 17:15:00 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34354">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>@Nic: Ah ok, my bad. I should have read your article *after* I had my caffiene. <img src="blog_with_comments_files/icon_smile.gif" alt=":)" class="wp-smiley">  Then I completely agree with you!
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34361">
+              <div class="author">
+                <cite>Mislav</cite>
+                <abbr title="2007-06-25T14:03:09">Tue, 26 Jun 2007 17:56:39 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34361">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>In your code there is mention of “script/generator” - it should be “script/generate”.
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34372">
+              <div class="author">
+                <cite><a href="http://drnicwilliams.com/" rel="external nofollow">Dr Nic</a></cite>
+                <abbr title="2007-06-25T14:03:09">Tue, 26 Jun 2007 19:26:08 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34372">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>@mislav - thx, fixed
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34640">
+              <div class="author">
+                <cite><a href="http://railsontherun.com/" rel="external nofollow">Matt Aimonetti</a></cite>
+                <abbr title="2007-06-25T14:03:09">Thu, 28 Jun 2007 03:40:44 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34640">edit</a></small>
+              </div>
+
+              <div class="content">
+     </p>
+    <p>Thanks for a great new feature and you just need to check out Edge to give it a try. (no monkey patching needed) <img src="blog_with_comments_files/icon_smile.gif" alt=":)" class="wp-smiley">
+    </p>
+              </div>
+
+            </li>
+
+
+            <li class="comment" id="comment-34663">
+              <div class="author">
+                <cite><a href="http://drnicwilliams.com/" rel="external nofollow">This is a very long user name that would normally overlap on to the next rows(s)</a></cite>
+                <abbr title="2007-06-25T14:03:09">Thu, 28 Jun 2007 09:41:56 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34663">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>@matt - sweet; my first core contribution <img src="blog_with_comments_files/icon_biggrin.gif" alt=":D" class="wp-smiley"> </p>
+    <p>I’ll update the description from “patch this” to “go get yourself some sweet edge sexiness” soon.
+    </p>
+              </div>
+
+            </li>
+
+
+          </ol>
+        </div>
+
+
+
+
+
+    <form action="http://drnicwilliams.com/wp-comments-post.php" class="comments" id="commentform" method="post">
+
+    <fieldset>
+      <legend>Comments</legend>
+
+        <p>
+          Logged in as <a href="http://drnicwilliams.com/wp-admin/profile.php">Dr Nic</a>.<br>
+          <a href="http://drnicwilliams.com/wp-login.php?action=logout" title="Log out of this account">Logout »</a>
+        </p>
+
+      <p>
+        <label>
+          Comments:<br>
+          <textarea name="comment" id="comment" cols="100" rows="20" tabindex="4"></textarea></label></p>
+      <p>
+        <input name="submit" id="submit" tabindex="5" value="Submit" type="submit">
+        <input name="comment_post_ID" value="197" type="hidden">
+      </p>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+
+  new Test.Unit.Runner({
+    // replace this with your real tests
+    setup: function() {
+      
+    },
+    
+    teardown: function() {
+      
+    },
+    
+    testTruth: function() { with(this) {
+      assert(true);
+    }}
+      
+  }, {testLog: "testlog"}); 
+  // For each Test.UnitRunner instance, specify the element id where results will be
+  // published; e.g. <div id="testlog"/> above.
+  // That is, you can have multiple "new Test.Unit.Runner() { ... }" on this page, just
+  // create more <div id="testlog2"></div> etc, and pass the element id to the hash above:
+  // e.g. {testLog: "testlog2"}
+// ]]>
+</script>
+</body>
+</html>

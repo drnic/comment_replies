@@ -2,11 +2,16 @@ h1. comment_replies
 
 h2. What
 
-This JavaScript project ...
+This JavaScript project makes it quick and easy to reply
+to specific comments within a blog/forum.
+
+It adds "reply" links for each comment in your 
+blog/forum, and when clicked it copies the comment's authors name
+into the comment textarea for easy reference.
 
 h2. Downloading
 
-TODO - where to download the library file?
+<a href="dist/comment_replies.js">comment_replies.js</a>
 
 h2. The basics
 
@@ -17,7 +22,7 @@ h2. Demonstration of usage
 
 h2. Forum
 
-"http://groups.google.com/group/comment_replies":http://groups.google.com/group/comment_replies
+"http://groups.google.com/group/drnic_javascript":http://groups.google.com/group/drnic_javascript
 
 TODO - create Google Group - comment_replies
 
