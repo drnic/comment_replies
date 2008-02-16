@@ -35,23 +35,40 @@
         <div id="comments_div">
         <ol id="comments" class="article-comments">
 
-            <li class="comment" id="comment-34663">
-              <div class="author">
-                <cite><a href="http://drnicwilliams.com/" rel="external nofollow">This is a very long user name that would normally overlap on to the next rows(s)</a></cite>
-                <abbr title="2007-06-25T14:03:09">Thu, 28 Jun 2007 09:41:56 UTC</abbr>
-                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34663">edit</a></small>
-              </div>
+          <li class="comment" id="comment-34220">
+            <div class="author">
+              <cite>Mislav</cite>
+              <abbr title="2007-06-25T14:03:09">Mon, 25 Jun 2007 17:31:26 UTC</abbr>
+                          <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34220">edit</a></small>
+            </div>
 
-              <div class="content">
-                <p>@matt - sweet; my first core contribution <img src="blog_with_comments_files/icon_biggrin.gif" alt=":D" class="wp-smiley"> </p>
-    <p>I’ll update the description from “patch this” to “go get yourself some sweet edge sexiness” soon.
-    </p>
-              </div>
+            <div class="content">
+              <p>This
+  is totally awesome! I’ve been using restful_authentication for quite a
+  long time and *hated* that I have to install the generator in every
+  single project. I kept thinking one should come up with a better way, a
+  gem-powered way … and here you are to respond to my pleas <img src="blog_with_comments_files/icon_smile.gif" alt=":)" class="wp-smiley">  Thank you!
+  </p>
+            </div>
 
-            </li>
+          </li>
 
+          <li class="comment" id="comment-34235">
+            <div class="author">
+              <cite><a href="http://errtheblog.com/" rel="external nofollow">Chris</a></cite>
+              <abbr title="2007-06-25T14:03:09">Mon, 25 Jun 2007 20:14:55 UTC</abbr>
+                          <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34235">edit</a></small>
+            </div>
 
-          </ol>
+            <div class="content">
+              <p>This is absolutely delicious.
+  </p>
+            </div>
+
+          </li>
+  
+
+        </ol>
         </div>
 
 
@@ -88,6 +105,7 @@
   new Test.Unit.Runner({
     setup: function() {
       DrNic.CommentReplies.markup();
+      $('comment').value = '';
     },
     
     teardown: function() {
@@ -102,6 +120,18 @@
       Event.simulate(comment_link, 'click');
       assertNotEqual("", form.value, 'textarea.comment should be initially empty');
     }},
+    
+    // Author with no URL
+    testAuthorWithNoURL: function() { with(this) {
+      var comment_link  = $$('li.comment a.reply').first();
+      var author        = "Mislav";
+      var form          = $('comment');
+      Event.simulate(comment_link, 'click');
+      var expected = '@Mislav - ';
+      assertEqual(expected, form.value, 'textarea.comment should be initially empty');
+    }},
+
+    
       
   }, {testLog: "testlog"}); 
   // For each Test.UnitRunner instance, specify the element id where results will be
