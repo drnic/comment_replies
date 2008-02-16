@@ -1,7 +1,9 @@
 <%= include 'HEADER' %>
 
-var CommentReplies = {
+<%= include 'module.js' %>
+
+DrNic.CommentReplies = {
   Version: '<%= APP_VERSION %>',
 };
 
-<%= include 'some_library_from_src_folder.js' %>
+<%= include 'markup.js' %>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>JavaScript unit test file</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script src="assets/prototype.js" type="text/javascript"></script>
+  <script src="assets/unittest.js" type="text/javascript"></script>
+  <script src="assets/drnic_js_test_helpers.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script src="../src/module.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../src/markup.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../src/reply.js" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="assets/unittest.css" type="text/css" />
+</head>
+<body>
+
+<div id="content">
+
+  <div id="header">
+    <h1>JavaScript unit test file</h1>
+    <p>
+      This file tests <strong>reply.js</strong>.
+    </p>
+  </div>
+
+  <!-- Log output (one per Runner, via {testLog: "testlog"} option)-->
+  <div id="testlog"></div>
+  
+  <!-- Put sample/test html here -->
+  <div id="sample">
+    <h5><a name="comments">Comments</a></h5> 
+
+        <div id="comments_div">
+        <ol id="comments" class="article-comments">
+
+            <li class="comment" id="comment-34663">
+              <div class="author">
+                <cite><a href="http://drnicwilliams.com/" rel="external nofollow">This is a very long user name that would normally overlap on to the next rows(s)</a></cite>
+                <abbr title="2007-06-25T14:03:09">Thu, 28 Jun 2007 09:41:56 UTC</abbr>
+                            <small><a href="http://drnicwilliams.com/wp-admin/post.php?action=editcomment&amp;comment=34663">edit</a></small>
+              </div>
+
+              <div class="content">
+                <p>@matt - sweet; my first core contribution <img src="blog_with_comments_files/icon_biggrin.gif" alt=":D" class="wp-smiley"> </p>
+    <p>I’ll update the description from “patch this” to “go get yourself some sweet edge sexiness” soon.
+    </p>
+              </div>
+
+            </li>
+
+
+          </ol>
+        </div>
+
+
+
+
+
+    <form action="http://drnicwilliams.com/wp-comments-post.php" class="comments" id="commentform" method="post">
+
+    <fieldset>
+      <legend>Comments</legend>
+
+        <p>
+          Logged in as <a href="http://drnicwilliams.com/wp-admin/profile.php">Dr Nic</a>.<br>
+          <a href="http://drnicwilliams.com/wp-login.php?action=logout" title="Log out of this account">Logout »</a>
+        </p>
+
+      <p>
+        <label>
+          Comments:<br>
+          <textarea name="comment" id="comment" cols="100" rows="20" tabindex="4"></textarea></label></p>
+      <p>
+        <input name="submit" id="submit" tabindex="5" value="Submit" type="submit">
+        <input name="comment_post_ID" value="197" type="hidden">
+      </p>
+      </fieldset>
+    </form>
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+
+  new Test.Unit.Runner({
+    setup: function() {
+      DrNic.CommentReplies.markup();
+    },
+    
+    teardown: function() {
+      $$('a.reply').invoke('remove');
+    },
+    
+    // Clicking a reply link should update comment form
+    testClickingAReplyLinkShouldUpdateCommentForm: function() { with(this) {
+      var comment_link = $$('li.comment a.reply').first();
+      var form = $('comment');
+      assertEqual("", form.value, 'textarea.comment should be initially empty');
+      Event.simulate(comment_link, 'click');
+      assertNotEqual("", form.value, 'textarea.comment should be initially empty');
+    }},
+      
+  }, {testLog: "testlog"}); 
+  // For each Test.UnitRunner instance, specify the element id where results will be
+  // published; e.g. <div id="testlog"/> above.
+  // That is, you can have multiple "new Test.Unit.Runner() { ... }" on this page, just
+  // create more <div id="testlog2"></div> etc, and pass the element id to the hash above:
+  // e.g. {testLog: "testlog2"}
+// ]]>
+</script>
+</body>
+</html>
