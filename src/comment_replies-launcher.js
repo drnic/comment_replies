@@ -15,7 +15,7 @@ function(){var t=document.createElement('doc:rdy');try{t.doScroll('left');
 i();t=null;}catch(e){st(arguments.callee,0);}})();}else{window.onload=i;}})(
 function(){
   var script = document.createElement("script");
-  script.src = 'dist/comment_replies-launcher.js';
+  script.src = 'dist/comment_replies.js';
   script.type= "text/javascript";
   document.getElementsByTagName('head')[0].appendChild(script);
 });

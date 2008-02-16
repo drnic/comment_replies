@@ -7,3 +7,5 @@ DrNic.CommentReplies = {
 };
 
 <%= include 'markup.js', 'reply.js' %>
+
+<%= include 'launcher.js' %>

@@ -11,7 +11,8 @@ into the comment textarea for easy reference.
 
 h2. Downloading
 
-<a href="dist/comment_replies.js">comment_replies.js</a>
+<a href="dist/comment_replies-launcher.js">Launcher</a>
+<a href="dist/comment_replies.js">Main code</a>
 
 h2. The basics
 
