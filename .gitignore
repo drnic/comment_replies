@@ -1,0 +1,4 @@
+.DS_Store
+pkg
+dist
+config/*.yml
