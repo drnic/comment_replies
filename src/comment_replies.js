@@ -2,9 +2,7 @@
 
 <%= include 'module.js' %>
 
-DrNic.CommentReplies = {
-  Version: '<%= APP_VERSION %>',
-};
+DrNic.CommentReplies.Version = '<%= APP_VERSION %>';
 
 <%= include 'markup.js', 'reply.js' %>
 
