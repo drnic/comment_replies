@@ -9,7 +9,7 @@ Description:
     into the comment textarea for easy reference.
 
 More information:
-    http://drnic_javascript.rubyforge.org/comment_replies
+    http://drnicjavascript.rubyforge.org/comment_replies
     
 Author:
     Dr Nic Williams, drnicwilliams@gmail.com
