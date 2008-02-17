@@ -73,7 +73,7 @@ Rake::PackageTask.new(APP_NAME, APP_VERSION) do |package|
   )
 end
 
-desc "Builds the distribution, runs the JavaScript unit tests and collects their results."
+desc "Builds the distribution, runs the JavaScript unit + functional tests and collects their results."
 task :test => [:dist, :test_units, :test_functionals]
 
 require 'jstest'
@@ -98,7 +98,7 @@ JavaScriptTestTask.new(:test_units, 4711) do |t|
   end
 end
 
-desc "Runs all the JavaScript unit tests and collects the results"
+desc "Runs all the JavaScript functional tests and collects the results"
 JavaScriptTestTask.new(:test_functionals, 4712) do |t|
   testcases        = ENV['TESTCASES']
   tests_to_run     = ENV['TESTS']    && ENV['TESTS'].split(',')
