@@ -5,7 +5,7 @@ Description:
     to specific comments within a blog/forum.
 
     It adds "reply" links for each comment in your 
-    blog/forum, and when clicked it copies the comment's authors name
+    blog/forum, and when clicked, it copies the comment's authors name
     into the comment textarea for easy reference.
 
 More information:
